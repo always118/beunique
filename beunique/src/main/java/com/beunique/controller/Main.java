@@ -15,7 +15,7 @@ public class Main {
 		System.out.println(f.getAbsolutePath());
 		ApplicationContext context = new ClassPathXmlApplicationContext("webapp/WEB-INF/applicationContext.xml");
 		TestController controller = (TestController) context.getBean("testController");
-		
+
 		System.out.println(controller.getGit());
 	}
 

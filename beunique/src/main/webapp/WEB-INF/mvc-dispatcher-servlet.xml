@@ -15,6 +15,7 @@
 	<!-- This is the auto component scanning (to use @Controller annotations in this package) -->
 	<context:component-scan base-package="com.beunique.controller" />
  
+ 	<!-- View resolver -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
@@ -23,6 +24,14 @@
 		<property name="suffix">
 			<value>.jsp</value>
 		</property>
+	</bean>
+	
+	<bean class="com.beunique.utils.CustomerValidator" />
+	
+ 	<!-- Register the Customer.properties -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="com/beunique/model/customer" />
 	</bean>
 
 
