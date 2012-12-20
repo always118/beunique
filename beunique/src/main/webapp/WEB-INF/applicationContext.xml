@@ -12,9 +12,6 @@
       http://www.springframework.org/schema/util 
       http://www.springframework.org/schema/util/spring-util-3.0.xsd">
       
-  <bean id="testController" name="com.beunique.controller.TestController">
-  	<property name="git" value="Hi!"></property>
-  </bean>
       
  </beans>
                
