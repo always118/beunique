@@ -1,20 +1,36 @@
 package com.beunique.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
 
-public class WelcomeController extends AbstractController{
+@Controller
+@RequestMapping("/")
+public class WelcomeController {
 
-	@Override
-	protected ModelAndView handleRequestInternal(HttpServletRequest request,
-		HttpServletResponse response) throws Exception {
- 
-		ModelAndView model = new ModelAndView("WelcomePage");
- 
-		return model;
+	@RequestMapping(method = RequestMethod.GET)
+	public String printWelcome(ModelMap model) {
+
+		model.addAttribute("message", "Spring 3 MVC Hello World");
+		return "index";
+
 	}
 
+	@RequestMapping("/add")
+	public ModelAndView add(ModelMap model) throws Exception {
+
+		model.addAttribute("message", "print add");
+		return new ModelAndView("index");
+
+	}
+
+	@RequestMapping("/delete")
+	public ModelAndView delete(ModelMap model) throws Exception {
+
+		model.addAttribute("message", "print delete");
+		return new ModelAndView("index");
+
+	}
 }
