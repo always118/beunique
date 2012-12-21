@@ -12,6 +12,16 @@
       http://www.springframework.org/schema/util 
       http://www.springframework.org/schema/util/spring-util-3.0.xsd">
       
+ <bean id="connectionFactoryLocator" class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
+    <property name="connectionFactories">
+        <list>
+            <bean class="org.springframework.social.twitter.connect.TwitterConnectionFactory">
+                <constructor-arg value="aqKUtc2zQEickHvikVg" />
+                <constructor-arg value="Pe6ZgzTqPQDRnT8LOuoTk4sBdm7oebUdweiGaQ7YY" />				
+            </bean>
+        </list>
+    </property>
+</bean>
       
  </beans>
                
