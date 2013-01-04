@@ -1,0 +1,58 @@
+html, body {
+	height: 99%;
+	margin: 0;
+}
+
+/*Adding borders just for the experimental phase*/
+div {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 2px solid black;
+}
+
+div div {
+	border: none;
+}
+
+#page {
+	width: 900px;
+	margin: auto;
+	height: 100%;
+	position: relative;
+}
+
+#header {
+	background: BurlyWood;
+	height: 100px;
+}
+
+#sidebar {
+	background: Gold;
+	float: right;
+	width: 25%
+}
+
+#content {
+	float: left;
+	width: 75%;
+	background: PaleGreen;
+}
+
+#content, #sidebar {
+    /* Calculation of the height */
+	height: 80%; /* fallback for browsers without support for calc() */
+	height: -webkit-calc(100% - 150px); /* WebKit 536.3 (Chrome 19) and above, experimental */
+	height: -moz-calc(100% - 150px); /* WebKit 536.3 (Chrome 19) and above, experimental */
+	height: calc(100% - 150px); /* final CSS3 compliant implementation; Firefox 16 and IE 9, and above */
+  }
+
+#footer {
+	clear: both;
+	height: 50px;
+	background-color: aqua;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
