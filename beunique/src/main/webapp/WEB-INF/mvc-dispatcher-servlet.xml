@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:util="http://www.springframework.org/schema/util"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-      http://www.springframework.org/schema/context
-      http://www.springframework.org/schema/context/spring-context-3.0.xsd
-      http://www.springframework.org/schema/aop
-      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
-      http://www.springframework.org/schema/util 
-      http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
 	<!-- This is the auto component scanning (to use @Controller annotations in this package) -->
 	<context:component-scan base-package="com.beunique.controller" />
- 
- 	<!-- View resolver -->
+
+	<!-- View resolver -->
 	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/WEB-INF/pages/</value>
 		</property>
@@ -25,13 +25,17 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
-	
 	<bean class="com.beunique.utils.CustomerValidator" />
-	
- 	<!-- Register the Customer.properties -->
+
+	<!-- Register the messages_*.properties -->
 	<bean id="messageSource"
-		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="com/beunique/model/customer" />
+	class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:messages" />
+		<property name="defaultEncoding" value="UTF-8"/>
+	</bean>
+	<bean id="localeResolver"
+	class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<property name="defaultLocale" value="en"/>
 	</bean>
 
 
