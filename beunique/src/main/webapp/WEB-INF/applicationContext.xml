@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
- xmlns:context="http://www.springframework.org/schema/context"
- xmlns:util="http://www.springframework.org/schema/util"
- xsi:schemaLocation="http://www.springframework.org/schema/beans
-      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-      http://www.springframework.org/schema/context
-      http://www.springframework.org/schema/context/spring-context-3.0.xsd
-      http://www.springframework.org/schema/aop
-      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
-      http://www.springframework.org/schema/util 
-      http://www.springframework.org/schema/util/spring-util-3.0.xsd">
-      
- <bean id="connectionFactoryLocator" class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
-    <property name="connectionFactories">
-        <list>
-            <bean class="org.springframework.social.twitter.connect.TwitterConnectionFactory">
-                <constructor-arg value="aqKUtc2zQEickHvikVg" />
-                <constructor-arg value="Pe6ZgzTqPQDRnT8LOuoTk4sBdm7oebUdweiGaQ7YY" />				
-            </bean>
-        </list>
-    </property>
-</bean>
-      
- </beans>
-               
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<bean id="connectionFactoryLocator" class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
+		<property name="connectionFactories">
+			<list>
+				<bean class="org.springframework.social.twitter.connect.TwitterConnectionFactory">
+					<constructor-arg value="aqKUtc2zQEickHvikVg" />
+					<constructor-arg value="Pe6ZgzTqPQDRnT8LOuoTk4sBdm7oebUdweiGaQ7YY" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<bean id="configurationBuilder" class="twitter4j.conf.ConfigurationBuilder" scope="session">
+		<property name="OAuthConsumerKey" value = "aqKUtc2zQEickHvikVg" />
+		<property name="OAuthConsumerSecret" value = "Pe6ZgzTqPQDRnT8LOuoTk4sBdm7oebUdweiGaQ7YY" />
+		<property name="OAuthAccessToken" value = "1015727234-pY0zfehX0lZcJEsVaKnT0xAmEqXTtmcpVTlOHX0" />
+		<property name="OAuthAccessTokenSecret" value = "1Pt8bZia2DsLEGs8brvp26gs53oQvGNR3AbF3zD1w" />
+	</bean>
+	 <!--<bean id = "twitterFactory" class = "twitter4j.TwitterFactory">
+		<constructor-arg index="0"><ref bean="configurationBuilder"/></constructor-arg>
+</bean> -->
+
+
+</beans>

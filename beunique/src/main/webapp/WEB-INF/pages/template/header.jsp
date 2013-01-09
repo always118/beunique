@@ -1,3 +1,6 @@
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css" type="text/css" media="screen" />
-
-<div id = "header">header</div>
+<div id="header">
+	<h1>
+		<a href="/beunique">BeUnique</a>
+	</h1>
+	<a id="test" href="#">test</a>
+</div>

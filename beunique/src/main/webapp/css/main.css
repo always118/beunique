@@ -1,18 +1,10 @@
+/*
+ * Layout css
+ */
 html, body {
 	height: 99%;
 	margin: 0;
-}
-
-/*Adding borders just for the experimental phase*/
-div {
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	border: 2px solid black;
-}
-
-div div {
-	border: none;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 #page {
@@ -24,28 +16,34 @@ div div {
 
 #header {
 	background: BurlyWood;
-	height: 100px;
+	height: 90px;
+	padding: 5px
+}
+
+#header h1 {
+	margin: 0;
 }
 
 #sidebar {
 	background: Gold;
 	float: right;
-	width: 25%
+	width: 200px;
 }
 
 #content {
+	padding-left: 5px;
 	float: left;
-	width: 75%;
+	width: 695px;
 	background: PaleGreen;
 }
 
 #content, #sidebar {
-    /* Calculation of the height */
+	/* Calculation of the height */
 	height: 80%; /* fallback for browsers without support for calc() */
 	height: -webkit-calc(100% - 150px); /* WebKit 536.3 (Chrome 19) and above, experimental */
 	height: -moz-calc(100% - 150px); /* WebKit 536.3 (Chrome 19) and above, experimental */
 	height: calc(100% - 150px); /* final CSS3 compliant implementation; Firefox 16 and IE 9, and above */
-  }
+}
 
 #footer {
 	clear: both;
@@ -56,3 +54,59 @@ div div {
 	width: 100%;
 }
 
+/*
+ * Content css
+ */
+
+.tweetsWrapper > div {
+	float: left;
+	width: 50%;
+}
+
+.tweetsWrapper > div input {
+	width: 95%;
+}
+.tweetsWrapper {
+	margin-top: 20px;
+	overflow: auto;
+}
+.authorImg {
+	float: left;
+}
+
+.authorName {
+	float: left;
+	padding-left: 5px;
+}
+.authorUsername {
+	float: left;
+	padding-left: 5px;
+}
+.timestamp {
+	clear: both;
+	font-size: smaller;
+}
+
+.tweetText {
+	clear: both;
+}
+.submitTweets {
+	clear: both;
+	text-align: center;
+	margin-top: 10px;
+}
+.tweetDetails {
+	margin: 10px 0;
+}
+
+.submitHeader {
+	text-align: center;
+	margin: 10px;
+	font-size: large;
+}
+
+.tweetSpinner {
+	margin-top: 20px;
+	text-align: center;
+	visibility: hidden;
+}
