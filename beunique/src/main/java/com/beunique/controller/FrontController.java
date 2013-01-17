@@ -1,21 +1,27 @@
 package com.beunique.controller;
 
+import java.util.Locale;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.beunique.utils.JsonUtil;
-import com.beunique.utils.UrlUtil;
-
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
+
+import com.beunique.model.SubmitTweet;
+import com.beunique.utils.JsonUtil;
+import com.beunique.utils.LanguageUtil;
+import com.beunique.utils.UrlUtil;
 
 /**
  * Front controller, used for every web action in this application
@@ -52,13 +58,30 @@ public class FrontController {
 		return "index";
 	}
 
-	@RequestMapping("/submit")
-	public String submit() throws Exception {
-		return "submit";
+	@RequestMapping(value = "/submit", method = RequestMethod.GET)
+	public ModelAndView submit(
+			@ModelAttribute("submitTweet") SubmitTweet submitTweet,
+			ModelMap model, Locale locale) throws Exception {
+
+		Map<String, String> languages = LanguageUtil
+				.getAvailableLanguagesForSubmit(locale);
+		model.addAttribute("languages", languages);
+		
+		return new ModelAndView("submit");
+	}
+
+	@RequestMapping(value = "/submit", method = RequestMethod.POST)
+	public ModelAndView submitForm(
+			@ModelAttribute("submitTweet") SubmitTweet submitTweet,
+			ModelMap model, Locale locale) throws Exception {
+
+		// Without this "redirect:" you will end up with the "Resend this form" popup
+		// when you hit refresh after submitting
+		return new ModelAndView("redirect:submit");
 	}
 
 	// Ajax mappings
-	@RequestMapping(value = "/retrieveTweet" , produces = "text/plain;charset=UTF-8")
+	@RequestMapping(value = "/retrieveTweet", produces = "text/plain;charset=UTF-8")
 	public @ResponseBody
 	String retrieveTweet(@RequestParam("tweetUrl") String tweetUrl)
 			throws TwitterException {

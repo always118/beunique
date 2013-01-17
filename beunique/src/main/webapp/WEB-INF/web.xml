@@ -26,7 +26,6 @@ version="2.4">
 		<url-pattern>/img/*</url-pattern>
 	</servlet-mapping>
 	
-
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath*:/WEB-INF/*-servlet.xml,
