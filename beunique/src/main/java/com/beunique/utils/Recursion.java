@@ -25,11 +25,11 @@ public class Recursion {
 			toA = 3;
 			
 		}
-
+// continue here
 		int[] A2 = Arrays.copyOfRange(A, 0, toA - 3);
 		int[] B2 = Arrays.copyOfRange(B, toB + 1, toB + 1 + toA - 2);
 
-		if (B1.length > 0 && A1.length > 0 && A2.length > 0 && B2.length > 0) {
+		if (B1.length > 0 && A1.length > 0 || A2.length > 0 && B2.length > 0) {
 			ringsNr +=  falling_disks(A1, B1) + falling_disks(A2, B2);
 		}
 		if (fromA > 0) {

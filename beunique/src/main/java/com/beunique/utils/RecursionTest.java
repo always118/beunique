@@ -25,6 +25,14 @@ public class RecursionTest {
 		int result = Recursion.falling_disks(A, B);
 		assertEquals(5, result);
 	}
+	@Test
+	public void testFalling_disks5() {
+		int[] A = new int[] { 19, 7, 18, 9, 5, 5, 9, 8, 11, 16, 19, 16 };
+		int[] B = new int[] { 7, 3, 2, 7, 6 };
+		
+		int result = Recursion.falling_disks(A, B);
+		assertEquals(4, result);
+	}
 
 	@Test
 	public void testFalling_disks2() {
