@@ -18,7 +18,7 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
-import com.beunique.model.SubmitTweet;
+import com.beunique.model.BeUnique;
 import com.beunique.utils.JsonUtil;
 import com.beunique.utils.LanguageUtil;
 import com.beunique.utils.UrlUtil;
@@ -60,7 +60,7 @@ public class FrontController {
 
 	@RequestMapping(value = "/submit", method = RequestMethod.GET)
 	public ModelAndView submit(
-			@ModelAttribute("submitTweet") SubmitTweet submitTweet,
+			@ModelAttribute("submitTweet") BeUnique submitTweet,
 			ModelMap model, Locale locale) throws Exception {
 
 		Map<String, String> languages = LanguageUtil
@@ -72,7 +72,7 @@ public class FrontController {
 
 	@RequestMapping(value = "/submit", method = RequestMethod.POST)
 	public ModelAndView submitForm(
-			@ModelAttribute("submitTweet") SubmitTweet submitTweet,
+			@ModelAttribute("submitTweet") BeUnique submitTweet,
 			ModelMap model, Locale locale) throws Exception {
 
 		// Without this "redirect:" you will end up with the "Resend this form" popup

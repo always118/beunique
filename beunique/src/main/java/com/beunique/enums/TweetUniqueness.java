@@ -1,4 +1,4 @@
-package com.beunique.model;
+package com.beunique.enums;
 
 /**
  * 
@@ -29,7 +29,7 @@ package com.beunique.model;
  *         @author Bruno
  * 
  */
-public enum ComparatorResult {
-	IDENTICAL, ALMOST_IDENTICAL, TRANSLATED, DIFFERENT, JOKE;
+public enum TweetUniqueness {
+	IDENTICAL, ALMOST_IDENTICAL, TRANSLATED, UNIQUE, JOKE;
 
 }

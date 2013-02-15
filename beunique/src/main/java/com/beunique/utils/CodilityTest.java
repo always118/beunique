@@ -5,61 +5,14 @@ import static org.junit.Assert.assertEquals;
 import java.util.Date;
 import java.util.Random;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class RecursionTest {
+public class CodilityTest {
 
-	@Test
-	public void testFalling_disks() {
-		int[] A = new int[] { 5, 6, 4, 3, 6, 2, 3 };
-		int[] B = new int[] { 2, 3, 5, 2, 4 };
-
-		int result = Recursion.falling_disks(A, B);
-		assertEquals(4, result);
-	}
-
-	@Test
-	public void testFalling_disks4() {
-		int[] A = new int[] { 10, 15, 8, 11, 15, 11, 14, 10, 10, 18, 5, 15 };
-		int[] B = new int[] { 3, 6, 5, 1, 6 };
-
-		int result = Recursion.falling_disks(A, B);
-		assertEquals(5, result);
-	}
-
-	@Test
-	public void testFalling_disks5() {
-		int[] A = new int[] { 19, 7, 18, 9, 5, 5, 9, 8, 11, 16, 19, 16 };
-		int[] B = new int[] { 7, 3, 2, 7, 6 };
-
-		int result = Recursion.falling_disks(A, B);
-		assertEquals(4, result);
-	}
-
-	@Test
-	public void testFalling_disks2() {
-		int[] A = new int[] { 5, 5, 5, 5, 5, 5, 5 };
-		int[] B = new int[] { 2, 2, 2, 2 };
-
-		int result = Recursion.falling_disks(A, B);
-		assertEquals(4, result);
-	}
-
-	@Test
-	public void testFalling_disks3() {
-		int[] A = new int[] { 1, 1, 1, 1, 1, 1, 1 };
-		int[] B = new int[] { 2, 2, 2, 2 };
-
-		int result = Recursion.falling_disks(A, B);
-		assertEquals(0, result);
-	}
-
-	@Test
-	public void testFactoriel() {
-		int a = 12;
-		int result = Recursion.factoriel(a);
-		assertEquals(479001600, result);
+	@Before
+	public void setUp() throws Exception {
 	}
 
 	@Test
@@ -67,7 +20,7 @@ public class RecursionTest {
 		int[] A = new int[] { 3 };
 		int[] B = new int[] { 2 };
 
-		assertEquals(1, Recursion.falling_disks(A, B));
+		assertEquals(1, Codility.falling_disks(A, B));
 	}
 
 	@Test
@@ -75,7 +28,7 @@ public class RecursionTest {
 		int[] A = new int[] { 2 };
 		int[] B = new int[] { 3 };
 
-		assertEquals(0, Recursion.falling_disks(A, B));
+		assertEquals(0, Codility.falling_disks(A, B));
 	}
 
 	@Test
@@ -83,7 +36,7 @@ public class RecursionTest {
 		int[] A = new int[] { 3, 2 };
 		int[] B = new int[] { 2, 3 };
 
-		assertEquals(2, Recursion.falling_disks(A, B));
+		assertEquals(2, Codility.falling_disks(A, B));
 	}
 
 	@Test
@@ -91,7 +44,7 @@ public class RecursionTest {
 		int[] A = new int[] { 3, 2 };
 		int[] B = new int[] { 3, 2 };
 
-		assertEquals(1, Recursion.falling_disks(A, B));
+		assertEquals(1, Codility.falling_disks(A, B));
 	}
 
 	@Test
@@ -99,39 +52,39 @@ public class RecursionTest {
 		int[] A = new int[] { 10, 15, 8, 11, 15, 11, 14, 10, 10, 18, 5, 15 };
 		int[] B = new int[] { 3, 6, 5, 1, 6 };
 
-		assertEquals(5, Recursion.falling_disks(A, B));
+		assertEquals(5, Codility.falling_disks(A, B));
 	}
 
 	@Test
-	public void testFalling_disks2R() {
+	public void testFalling_disks2() {
 		int[] A = new int[] { 5, 6, 4, 3, 6, 2, 3 };
 		int[] B = new int[] { 2, 3, 5, 2, 4 };
 
-		assertEquals(4, Recursion.falling_disks(A, B));
+		assertEquals(4, Codility.falling_disks(A, B));
 	}
 
 	@Test
-	public void testFalling_disks3R() {
+	public void testFalling_disks3() {
 		int[] A = new int[] { 5, 6, 4, 3, 6, 2, 3 };
 		int[] B = new int[] { 3, 3, 3, 3 };
 
-		assertEquals(4, Recursion.falling_disks(A, B));
+		assertEquals(4, Codility.falling_disks(A, B));
 	}
 
 	@Test
-	public void testFalling_disks4R() {
+	public void testFalling_disks4() {
 		int[] A = new int[] { 5, 6, 4, 3, 6, 2, 3 };
 		int[] B = new int[] { 3, 2, 6, 3, 4, 6, 5 };
 
-		assertEquals(2, Recursion.falling_disks(A, B));
+		assertEquals(2, Codility.falling_disks(A, B));
 	}
 
 	@Test
-	public void testFalling_disks5R() {
+	public void testFalling_disks5() {
 		int[] A = new int[] { 4, 3, 2, 1 };
 		int[] B = new int[] { 1, 2, 3, 4 };
 
-		assertEquals(4, Recursion.falling_disks(A, B));
+		assertEquals(4, Codility.falling_disks(A, B));
 	}
 
 	@Test
@@ -140,19 +93,9 @@ public class RecursionTest {
 		int[] A = new int[] { 1, 1, 1 };
 		int[] B = new int[] { 2, 2, 2 };
 
-		assertEquals(0, Recursion.falling_disks(A, B));
+		assertEquals(0, Codility.falling_disks(A, B));
 	}
 
-	@Test
-	public void testFalling_disks62() {
-
-		int[] A = new int[] { 1, 1, 1 };
-		int[] B = new int[] { 1, 1, 1 };
-
-		assertEquals(3, Recursion.falling_disks(A, B));
-	}
-
-	@Ignore
 	@Test
 	public void testFalling_disksTimeTest() {
 		Random randomGenerator = new Random();
@@ -162,21 +105,21 @@ public class RecursionTest {
 		int[] A = new int[200000];
 		int[] B = new int[200000];
 		for (int i = 0; i < A.length; i++) {
+			// A[i] = 2;
+			// B[i] = 2;
 			A[i] = randomRadius;
 			B[i] = randomRadius;
 		}
 
+		System.out.println("Radius: " + randomRadius);
 		Date d1 = new Date();
-		int result = Recursion.falling_disks(A, B);
+		Codility.falling_disks(A, B);
 		Date d2 = new Date();
 		double seconds = (d2.getTime() - d1.getTime()) / (double) 1000;
-		System.out.println("It took nearly " + seconds
-				+ " seconds to execute, random radius (" + randomRadius
-				+ "), number of inserted disks" + result);
+		System.out.println("It took nearly " + seconds + " seconds to execute");
 
 	}
 
-	@Ignore
 	@Test
 	public void testFalling_disksTimeTest2() {
 		// Init arrays
@@ -191,16 +134,15 @@ public class RecursionTest {
 
 		// System.out.println("Radius: " + randomRadius);
 		Date d1 = new Date();
-		int result = Recursion.falling_disks(A, B);
+		int result = Codility.falling_disks(A, B);
 		assertEquals(size, result);
 		Date d2 = new Date();
 		double seconds = (d2.getTime() - d1.getTime()) / (double) 1000;
 		System.out.println("It took about " + seconds + " seconds to execute ("
-				+ size + "), pyramid model ");
+				+ size + ") ");
 
 	}
 
-	@Ignore
 	@Test
 	public void testFalling_disksTimeTest3() {
 
@@ -216,16 +158,15 @@ public class RecursionTest {
 
 		// System.out.println("Radius: " + randomRadius);
 		Date d1 = new Date();
-		int result = Recursion.falling_disks(A, B);
+		int result = Codility.falling_disks(A, B);
 		assertEquals(size, result);
 		Date d2 = new Date();
 		double seconds = (d2.getTime() - d1.getTime()) / (double) 1000;
 		System.out.println("It took about " + seconds + " seconds to execute ("
-				+ size + ") pyramid model ");
+				+ size + ") ");
 
 	}
 
-	@Ignore
 	@Test
 	public void testFalling_disksTimeTest4() {
 		Random randomGenerator = new Random();
@@ -241,16 +182,15 @@ public class RecursionTest {
 
 		// System.out.println("Radius: " + randomRadius);
 		Date d1 = new Date();
-		int result = Recursion.falling_disks(A, B);
+		int result = Codility.falling_disks(A, B);
 		assertEquals(size, result);
 		Date d2 = new Date();
 		double seconds = (d2.getTime() - d1.getTime()) / (double) 1000;
 		System.out.println("It took about " + seconds + " seconds to execute ("
-				+ size + ") random, but largest B is smaller than smallest A");
+				+ size + ") ");
 
 	}
 
-	@Ignore
 	@Test
 	public void testFalling_disksTimeTest5() {
 		Random randomGenerator = new Random();
@@ -287,13 +227,12 @@ public class RecursionTest {
 
 		// System.out.println("Radius: " + randomRadius);
 		Date d1 = new Date();
-		int result = Recursion.falling_disks(A, B);
+		int result = Codility.falling_disks(A, B);
 		assertEquals(size, result);
 		Date d2 = new Date();
 		double seconds = (d2.getTime() - d1.getTime()) / (double) 1000;
 		System.out.println("It took about " + seconds + " seconds to execute ("
-				+ size
-				+ ") pyramid model, (with random generators, four level)");
+				+ size + ") ");
 
 	}
 
@@ -318,11 +257,10 @@ public class RecursionTest {
 		System.out.println("B.length:" + b);
 		System.out.println((a > b) ? "A>B" : "B>A");
 		Date d1 = new Date();
-		System.out.println(Recursion.falling_disks(A, B));
+		System.out.println(Codility.falling_disks(A, B));
 		Date d2 = new Date();
 		double seconds = (d2.getTime() - d1.getTime()) / (double) 1000;
-		System.out.println("It took nearly " + seconds
-				+ " seconds to execute, pure random");
+		System.out.println("It took nearly " + seconds + " seconds to execute");
 
 	}
 
